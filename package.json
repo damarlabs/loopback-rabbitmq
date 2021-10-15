@@ -1,10 +1,12 @@
 {
-  "name": "loopback-rabbitmq",
-  "version": "1.1.6-0",
-  "description": "loopback-rabbitmq",
+  "name": "damarlabs-loopback-rabbitmq",
+  "version": "1.2.6-0",
+  "description": "damarlabs-loopback-rabbitmq",
   "keywords": [
     "loopback-extension",
-    "loopback"
+    "loopback",
+    "rabbitmq",
+    "loopback-rabbitmq"
   ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -29,7 +31,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/alexnfsc175/loopback-rabbitmq"
+    "url": "https://github.com/damarlabs/loopback-rabbitmq"
   },
   "author": "Alex Pereira | Getconnect",
   "license": "",
