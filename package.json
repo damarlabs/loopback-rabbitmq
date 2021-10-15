@@ -1,6 +1,6 @@
 {
   "name": "damarlabs-loopback-rabbitmq",
-  "version": "1.2.6-0",
+  "version": "1.2.6-1",
   "description": "damarlabs-loopback-rabbitmq",
   "keywords": [
     "loopback-extension",
