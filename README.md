@@ -1,14 +1,16 @@
-# loopback-rabbitmq
+# damarlabs-loopback-rabbitmq
 
 An Rabbitmq extension for LoopBack 4.
 
 ```npm
-npm i -s loopback-rabbitmq
+npm i -s damarlabs-loopback-rabbitmq
 ```
+
+Extension from `loopback-rabbitmq`. Introduce new feature in consumer, adding option to enable/disable rabbit consumer.
 
 ## Usage
 
-When the `loopback-rabbitmq` package is installed, bind it to your application with `app.component()`
+When the `damarlabs-loopback-rabbitmq` package is installed, bind it to your application with `app.component()`
 
 ```typescript
 import {RestApplication} from '@loopback/rest';
@@ -149,8 +151,21 @@ export class WebhooksConsumer {
     exchange: 'messaging.direct',
     routingKey: 'tenant.webhook',
     queue: 'webhooks',
+    enabled: true,
   })
   async handle(message: Message, rawMessage: ConsumeMessage) {
+    console.log('WebhooksConsumer: ', message);
+    console.log('WebhooksConsumer:raw: ', rawMessage);
+  }
+
+  @rabbitConsume({
+    exchange: 'messaging.direct',
+    routingKey: 'user.webhook',
+    queue: 'users',
+    enabled: false,
+  })
+  async willNotCall(message: Message, rawMessage: ConsumeMessage) {
+    console.log('This methode will not consume any message since it disable from configuration');
     console.log('WebhooksConsumer: ', message);
     console.log('WebhooksConsumer:raw: ', rawMessage);
   }

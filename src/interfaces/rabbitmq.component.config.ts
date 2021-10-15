@@ -34,6 +34,11 @@ export interface RabbitQueueMetadata {
    */
   errorHandler?: MessageErrorHandler;
   allowNonJsonMessages?: boolean;
+  /**
+   * Enabled option so it can set from configuration if need to enable the consumer or not
+   * Default behaviour is enable
+   */
+  enabled?: boolean;
 }
 
 export interface RabbitmqComponentConfig {

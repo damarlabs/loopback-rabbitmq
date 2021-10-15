@@ -71,10 +71,12 @@ export class QueueObserver implements LifeCycleObserver {
         );
 
         if (methodMetadata) {
-          await this.rabbitmqConsumer.setupSubscriberChannel(
-            myConsumer[method].bind(myConsumer),
-            methodMetadata,
-          );
+          if (methodMetadata.enabled || methodMetadata.enabled === undefined) {
+            await this.rabbitmqConsumer.setupSubscriberChannel(
+              myConsumer[method].bind(myConsumer),
+              methodMetadata,
+            );
+          }
         }
       }
     }
